@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+    
+    
+    <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap" rel="stylesheet">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Lemonada:wght@515&display=swap" rel="stylesheet">
+   
+   <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@1,600&display=swap" rel="stylesheet">
+   
+   
+    <style>
+    body{
+      margin: 0;
+      padding: 0;
+      background-color: rgb(0,150,200);
+    }
+    
+    #start{
+      display: block;
+    }
+    
+    #play{
+      display: none;
+    }
+    
+    /* game start design */
+    
+        #heading{
+          font-size: 60px;
+          color: goldenrod;
+          text-align: center;
+         font-family: 'Kaushan Script', cursive;
+         margin-top: 10px;
+        }
+        a {
+        display: inline-block;
+        width: 70%;
+        height: 20%;
+        text-decoration: none;
+        padding-top: 5px;
+        margin-top: 50px;
+        background: linear-gradient(-45deg, rgba(255, 255, 255, 0.22), rgba(0, 0, 0, 0.2));
+        box-shadow: -1px -1px 8px white, 5px 4px 10px black;
+        color: white;
+        text-align: center;
+        border-radius: 50px;
+        font-size: 35px;
+        font-weight: bold;
+        font-family: 'Lemonada', cursive;
+        transition: box-shadow 0.2s, color 0.2s;
+        outline: none;
+        }
+        
+        #startoptions {
+        margin-top: 0;
+        margin-left: 25%;
+        align-content: center;
+        }
+        
+        a:hover {
+        text-shadow: 0 0 5px white;
+        text-shadow: 0 0 3px rgba(255, 255, 255, 0.7);
+        box-shadow: -1px -1px 4px white, 1px 2px 4px black;
+        outline: none;
+        }
+        
+        footer {
+        position: absolute;
+        bottom: 5px;
+        width: 98%;
+        margin-left: -95px;
+        text-align: center;
+        }
+        #version {
+        font-size: 10px;
+        color: white;
+        background-color: rgba(0,150,200);
+        }
+    
+    /* game rules design */
+    
+       #instruction{
+         display: none;
+         margin: 10px;
+       }
+       
+       #instruction li{
+         padding-top: 25px;
+         color: cyan;
+         font-family: 'Nunito', sans-serif;
+       }
+       
+       #instruction legend{
+        font-family: 'Lemonada', cursive; 
+        font-size: 40px;
+        color: orange;
+       }
+       
+       #instruction fieldset{
+         border-color: white;
+       }
+     
+     /* About page design of game */
+     
+       #about{
+         text-align: center;
+         display: none;
+         font-family: 'Lemonada', cursive;
+       }
+       
+       #about h1{
+         color: white;
+       }
+       
+       #info{
+         margin: 4px;
+         width: 98%;
+         padding-top: 10px;
+         padding-bottom: 10px;
+         background-color:#4169e1;
+       }
+       
+       #info  b{
+         color: #0000ff;
+       }
+       
+       #ans{
+         color: #7fffd4;
+       }
+       
+    /* gameplay design */
+    
+       body {
+       padding: 0;
+       margin: 0;
+       }
+       #show{
+         background-color: white;
+         box-shadow: none;
+         width: 25%;
+         border-radius: 20px;
+         color: black;
+         height: 40px;
+         padding-top: 0;
+         margin-top: 5px;
+         margin-bottom: 0;
+       }
+       button {
+       background: linear-gradient(-45deg, rgba(255, 255, 255, 0.22), rgba(0, 0, 0, 0.2));
+       box-shadow: -1px -1px 8px white, 5px 4px 10px black;
+       color: rgba(50, 50, 50, 0.4);
+       text-align: center;
+       font-weight: bold;
+       transition: box-shadow 0.1s, color 0.2s;
+       border: 1px solid dodgerblue;
+       outline: none;
+       margin: 5px;
+       }
+       button:active {
+       color: white;
+       text-shadow: 0 0 3px rgba(255, 255, 255, 0.7), 0 0 2px rgba(255, 255, 255, 0.5);
+       box-shadow: -1px -1px 4px white, 1px 2px 4px black;
+       outline: none;
+       }
+       #enter,
+       #delete {
+       width: 70px;
+       padding: 5px;
+       border-radius: 5px;
+       height: 40px;
+       }
+       #main {
+       border: 3px solid darkcyan;
+       text-align: center;
+       padding: 10px;
+       margin: 5px;
+       background-color: ghostwhite;
+       }
+       #main h1 {
+       color: coral;
+       }
+       #hint {
+       border: 2px solid blanchedalmond;
+       height: 150px;
+       overflow-y: auto;
+       padding-top: 10px;
+       padding-left: 5px;
+       font-size: 18px;
+       color: orangered;
+       background-color: white;
+       text-shadow: 5px 5px 4px rgba(50, 50, 50, 0.3);
+       box-shadow: inset 6px 6px 10px 0 rgba(0, 0, 0, 0.2), inset -6px -6px 10px 0 rgba(255, 255, 255, 0.5);
+       }
+       #extrahint {
+       color: blueviolet;
+       }
+       #guess {
+       width: 150px;
+       height: 45px;
+       font-size: 30px;
+       padding-left: 50px;
+       padding-right: 40px;
+       letter-spacing: 8px;
+       outline: none;
+       border: none;
+       border-radius: 50px;
+       text-shadow: 6px 6px 5px rgba(0, 0, 0, 0.3);
+       color: dodgerblue;
+       font-weight: bold;
+       box-shadow: inset 6px 6px 10px 0 rgba(0, 0, 0, 0.2), inset -6px -6px 10px 0 rgba(255, 255, 255, 0.5);
+       }
+       ::placeholder {
+       padding: 0;
+       text-align: center;
+       font-size: 19px;
+       letter-spacing: 0;
+       color: rgb(190, 190, 190);
+       text-shadow: none;
+       }
+       #number {
+       border-radius: 50px;
+       width: 60px;
+       height: 60px;
+       margin-left: 10px;
+       margin-right: 10px;
+       }
+       #chances {
+       color: orange;
+       } 
+       
+    </style>
+</head>
+<body>
+  
+  <div id ="start">
+
+    <!***** start game start html design *****>
+    
+    <p id="heading">Guess Secret Number</p>
+         
+    <div id="startoptions">
+      
+         
+      <a href="#" onclick="showPlayGame()">PLAY</a>
+      <br>
+      <a href="#" onclick="showGameRules()">RULES</a>
+      <br>
+      <a href="#" onclick="showAbout()">ABOUT</a>
+      
+    <footer>
+      <hr style="background-color: white;">
+      <b id="version">Version 2.0</b>
+    </footer>
+  </div>
+</div>
+
+
+<! ********** game play html designing *******>
+
+<div id="play">
+<button id="show" onclick="showStartGame()"><pre>&lt;&lt; Back</pre></button>
+
+  <div id="main">
+    <h1 style=" font-family: 'Lemonada', cursive; font-size:25px; "> Guess Secret Number </h1>
+    <input type="text" maxlength="6" placeholder="Your Number" id="guess" disabled>
+    <br>
+    <br>
+    <div id="hint">
+      # Hint Box #
+      <br>
+      The secret number lies between 0 to 1000000
+    </div>
+    <br>
+    <div id="chances">
+      Trial Left : 15
+    </div>
+    <br>
+    <div>
+      <button id="number" onclick="guessNumber(1)">1</button>
+      <button id="number" onclick="guessNumber(2)">2</button>
+      <button id="number" onclick="guessNumber(3)">3</button>
+      <br>
+      <button id="number" onclick="guessNumber(4)">4</button>
+      <button id="number" onclick="guessNumber(5)">5</button>
+      <button id="number" onclick="guessNumber(6)">6</button>
+      <br>
+      <button id="number" onclick="guessNumber(7)">7</button>
+      <button id="number" onclick="guessNumber(8)">8</button>
+      <button id="number" onclick="guessNumber(9)">9</button>
+      <br>
+      <button id="delete" onclick="deleteValue()">DEL</button>
+      <button id="number" onclick="guessNumber(0)">0</button>
+      <button id="enter" onclick="checkAnswer()">ENTER</button>
+    </div>
+  </div>
+
+</div>
+
+<div id="instruction">
+  
+  <fieldset>
+    <legend>Rules</legend>
+    <ul>
+      
+      <li>You have got 15 trials to guess the correct secret number.</li>
+      
+      <li>Enter any number which lies within the range of the numbers shown in the Hint Box. </li>
+      
+      <li>For each number entered the number of trials is reduced by one (1).</li>
+      
+      <li>For those entered numbers which lies outside the range , no trials are lost.</li>
+      
+      <li>For each number entered which lies out of range a message is displayed notifying the end limits.</li>
+      
+      
+    </ul>
+  </fieldset>
+  
+  <button id="show" onclick="showStartGame()" style="float: right;">&lt;&lt;&nbsp;Back</button>
+  
+</div>
+
+<! ****** html code for about page ********>
+
+<div id="about">
+  
+  <h1>About</h1>
+  
+  <div id="info">
+   <b>Current Game Version</b>
+   <div id="ans">2.0</div>
+  </div>
+  
+  <div id="info">
+   <b>Recommend Web Browser</b> 
+   <br>
+   <div id="ans">Firefox / Chrome</div>
+  </div>
+  
+  <div id="info">
+    <b>Developer</b>
+    <br>
+    <div id="ans">Chiranjit Gorai</div>
+  </div>
+  
+  <div id="info">
+    <b>Web Development Language</b>
+    <br>
+    <div id="ans">HTML, CSS, JAVASCRIPT</div>
+  </div>
+  <button id="show" style="margin-top: 10px; width: 150px; letter-spacing: 2px;" onclick="showStartGame()">&lt;&lt;&nbsp;Back</button>
+</div>
+
+<script>
+
+/* game logic */
+
+var secret = Math.floor(Math.random() * 1000000);
+var remaining = 15;
+var guessvalue = 0;
+var answer, max = 999999,
+min = 0;
+function checkAnswer()
+{
+answer = document.getElementById('guess').value;
+if (remaining > 0)
+{
+if (answer == '')
+{
+alert("Please enter a number !!")
+}
+else
+{
+compareAnswer();
+}
+}
+}
+function compareAnswer()
+{
+//compare two strings
+if (secret == answer)
+{
+alert('correct guess.\n Congratulations !! You won.');
+if (confirm("Do you want to play again !!"))
+{
+window.location.reload();
+}
+}
+else
+{
+if (secret < answer)
+{
+  if (answer < max) 
+  { 
+  max=answer; 
+  printHint(0); 
+
+ } 
+else
+{ 
+  printHint(2) 
+  
+}
+} 
+else 
+{ 
+  if (parseInt(answer) > parseInt(min))
+  {
+
+    min = answer;
+    printHint(0);
+   
+  }
+  else
+  {
+     printHint(1);
+  }
+  }
+  }
+  if (remaining > 0)
+  {
+  trialsLeft();
+  }
+  else
+  {
+  showSecret();
+  }
+  }
+  function printHint(view)
+  {
+  if (view == 0)
+  {
+  document.getElementById('hint').innerHTML = "<p>Secret Number lies between " + min + " and " + max + "</p>" + document.getElementById('hint').innerHTML;
+  remaining = remaining - 1;
+  }
+  else if (view == 1)
+  {
+  document.getElementById('hint').innerHTML = "<p id='extrahint'>Enter a number greater than " + min + "</p>" + document.getElementById('hint').innerHTML;
+  }
+  else
+  {
+  document.getElementById('hint').innerHTML = "<p id='extrahint'>Enter a number lesser than " + max + "</p>" + document.getElementById('hint').innerHTML;
+  }
+  }
+  function trialsLeft()
+  {
+  document.getElementById('chances').innerHTML = "Trials Left : " + remaining;
+  }
+  function showSecret()
+  {
+  alert("You Lost ! \nSecret Number is : " + secret);
+  remaining = 0;
+  trialsLeft();
+  if (confirm("Do you wish to try again ??"))
+  {
+  window.location.reload();
+  }
+  }
+  function guessNumber(num)
+  {
+  if (guessvalue < 100000) { guessvalue=(guessvalue * 10) + num; insertGuessValue(); } } function deleteValue() { guessvalue=Math.floor(guessvalue / 10); if (guessvalue==0) { guessvalue='' ; } insertGuessValue(); } function insertGuessValue() { document.getElementById('guess').value=guessvalue; }
+
+/* hiding function */
+
+function showPlayGame()
+{
+  document.getElementById('start').style.display="none";
+  document.getElementById('instruction').style.display="none";
+ document.getElementById('play').style.display="block"; 
+  document.getElementsByTagName("body")[0].style.backgroundColor="rgba(0,0,0,0.7)";
+
+}
+
+function showStartGame()
+{
+  document.getElementById('start').style.display="block";
+  document.getElementsByTagName("body")[0].style.backgroundColor="rgba(0,150,200,1)";
+  document.getElementById('play').style.display="none";
+  document.getElementById('instruction').style.display="none";
+  document.getElementById('about').style.display="none";
+  
+}
+
+function showGameRules()
+{
+  document.getElementById('instruction').style.display="block";
+document.getElementById('start').style.display="none";
+document.getElementsByTagName("body")[0].style.backgroundColor="rgba(0,150,200,1)";
+document.getElementById('play').style.display="none";
+
+}
+
+function showAbout()
+{
+  document.getElementById('about').style.display="block";
+  document.getElementById('instruction').style.display="none";
+  document.getElementById('start').style.display="none";
+  document.getElementsByTagName("body")[0].style.backgroundColor="#191970";
+  document.getElementById('play').style.display="none";
+  
+}
+
+</script>
+</body>
+
+</html>
