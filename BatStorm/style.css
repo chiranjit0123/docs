@@ -1,0 +1,65 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+#canvas1{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -99%);
+  width: 100%;
+  height: 50%;
+  border: 2px solid black;
+}
+
+#up, #left, #fire, #right, #down{
+  position: absolute;
+  border: 2px solid black;
+  color: #ffffff;
+  font-size: 30px;
+  text-align: center;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  outline: none;
+  font-weight: bolder;
+}
+
+#up, #left, #right, #down{
+  height: 50px;
+  width: 100px;
+  border-radius: 60px;
+  padding-bottom: 55px;
+}
+
+#up{
+  top: 62.5%;
+  left: 37%;
+}
+
+#left, #right{
+  top: 75%;
+}
+
+#left{
+  left: 9.5%;
+}
+
+#fire{
+  top: 72%;
+  left: 37%;
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  padding-bottom: 8px;
+}
+
+#right{
+  right: 10%;
+}
+
+#down{
+  top: 87%;
+  left: 37%;
+}
