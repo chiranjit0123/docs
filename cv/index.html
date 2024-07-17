@@ -13,16 +13,17 @@
             <div class="contact-info">
                 <h1>Chiranjit Gorai</h1>
                 <h2>Linux and Cloud Admin</h2>
-                <p><a href="#"><img src="images/icon/phone.svg" class="icon">chiranjitgorai0123@gmail.com</a> | <a href="#"><img src="images/icon/email.svg" class="icon">+91 8555887526</a> | <a href="https://github.com/yourgithubprofile" target="_blank"><span><img src="images/icon/location.svg" class="icon"></span>Jamshedpur, Jharkhand - 831004</a></p>
-                
                 <p>
-                    <a href="www.linkedin.com/in/chiranjit-gorai" target="_blank"><img src="images/icon/linkedin.svg" class="icon">LinkedIn</a> |
-                    <a href="https://www.linkedin.com/in/yourlinkedinprofile" target="_blank"><img src="images/icon/github.svg" class="icon">Github</a>
+                    <a href="#"><img src="images/icon/email.svg" class="icon">chiranjitgorai0123@gmail.com</a> | <a href="#"><img src="images/icon/phone.svg" class="icon">+91 8555887526</a> | <a href="https://github.com/yourgithubprofile" target="_blank"><span><img src="images/icon/location.svg" class="icon"></span>Jamshedpur, Jharkhand - 831004</a>
+                </p>
+                <p id="social-links">
+                    <a href="https://www.linkedin.com/in/chiranjit-gorai/" target="_blank"><img src="images/icon/linkedin.svg" class="icon">LinkedIn</a> |
+                    <a href="https://chiranjit0123.github.io/games/cv/" target="_blank"><img src="images/icon/github.svg" class="icon">Github</a>
                 </p>
             </div>
         </header>
-        <section>
-            <h2>Summary</h2>
+        <section id="section-summary">
+            <h2>Objective</h2>
             <p>Enthusiastic and experienced Linux and Cloud Administrator with over 3 years of hands-on experience managing Linux servers and cloud infrastructures. Proven track record of optimizing system performance, enhancing security, and automating tasks. Adept at managing large-scale environments, migrating legacy systems, and implementing robust backup and recovery strategies. Currently pursuing M.Tech from BITS Pilani in Computing Systems and Infrastructure.</p>
         </section>
         <section>
@@ -101,7 +102,7 @@
                 <li>Microsoft Azure (AZ – 900) - Certification Number: 280Y67-876AA0</li>
             </ul>
         </section>
-        <section>
+        <section id="hobby-section">
             <h2>Hobbies</h2>
             <ul>
                 <li>Watching Anime</li>
@@ -113,8 +114,25 @@
             <h2>Declaration</h2>
             <p>I hereby declare that all the details provided above are true to the best of my knowledge and belief.</p>
             <p><strong>Location:</strong> Jamshedpur</p>
-            <p><strong>Date:</strong> 12 July 2024</p>
+            <p><strong>Date:</strong> <span id="date">12 July 2024<span></p>
         </section>
     </div>
+    <script type="text/javascript">
+        function getCurrentDate() {
+            const months = [
+                "January", "February", "March", "April", "May", "June",
+                "July", "August", "September", "October", "November", "December"
+            ];
+
+            const date = new Date();
+            const day = date.getDate();
+            const month = months[date.getMonth()];
+            const year = date.getFullYear();
+
+            return `${day} ${month}, ${year}`;
+        }
+
+        document.getElementById("date").innerHTML = getCurrentDate();
+    </script>
 </body>
 </html>
